@@ -8,7 +8,7 @@
       },
       "manual": {
         "title": "Serrure Nuki",
-        "description": "L'identifiant (Nuki ID, hexadécimal) figure dans l'appli Nuki et dans les sujets MQTT nuki/<ID>/…",
+        "description": "L'identifiant (Nuki ID, hexadécimal) figure dans l'appli Nuki et dans les sujets MQTT nuki/IDENTIFIANT/…",
         "data": { "nuki_id": "Nuki ID", "lock_name": "Nom (facultatif)", "topic_prefix": "Préfixe MQTT" }
       }
     },

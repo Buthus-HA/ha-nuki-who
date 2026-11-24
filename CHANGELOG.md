@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-11-24
+- Traductions : suppression d'un texte pris pour du HTML par hassfest.
+- Workflows : actions GitHub à jour (Node.js 24).
+
 ## 0.1.0 — 2026-11-24
 - Version initiale : décodage de `lockActionEvent` (API MQTT locale Nuki), identification par Auth-ID ou par code clavier.
 - Détection automatique des serrures sur MQTT à l'installation.

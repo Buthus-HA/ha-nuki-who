@@ -10,7 +10,7 @@
       },
       "manual": {
         "title": "Nuki lock",
-        "description": "The Nuki ID (hex) is shown in the Nuki app and in MQTT topics nuki/<ID>/…",
+        "description": "The Nuki ID (hex) is shown in the Nuki app and in MQTT topics nuki/IDENTIFIER/…",
         "data": {
           "nuki_id": "Nuki ID",
           "lock_name": "Name (optional)",
