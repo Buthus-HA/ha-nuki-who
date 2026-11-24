@@ -1,0 +1,72 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nuki – who opened?",
+        "description": "{count} Nuki lock(s) found on MQTT. The local MQTT API must be enabled in the Nuki app.",
+        "data": {
+          "nuki_id": "Lock"
+        }
+      },
+      "manual": {
+        "title": "Nuki lock",
+        "description": "The Nuki ID (hex) is shown in the Nuki app and in MQTT topics nuki/<ID>/…",
+        "data": {
+          "nuki_id": "Nuki ID",
+          "lock_name": "Name (optional)",
+          "topic_prefix": "MQTT prefix"
+        }
+      }
+    },
+    "error": {
+      "invalid_id": "Invalid ID (letters and digits only)."
+    },
+    "abort": {
+      "already_configured": "This lock is already configured.",
+      "mqtt_not_ready": "MQTT is not configured or not connected."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "People",
+        "description": "One line per person: `Auth-ID = Name` (app, fob…) or `code:Code-ID = Name` (keypad). Unknown Auth-IDs show up in the “Last person” sensor after an opening. {error}",
+        "data": {
+          "people": "People"
+        }
+      }
+    },
+    "error": {
+      "invalid_people": "Invalid format."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "last_person": {
+        "name": "Last person"
+      },
+      "last_action": {
+        "name": "Last action"
+      }
+    },
+    "event": {
+      "lock_action": {
+        "name": "Action",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "none": "No action",
+              "unlock": "Unlock",
+              "lock": "Lock",
+              "unlatch": "Unlatch",
+              "lock_n_go": "Lock'n'go",
+              "lock_n_go_unlatch": "Lock'n'go with unlatch",
+              "full_lock": "Full lock",
+              "other": "Other"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nuki – qui a ouvert ?",
+        "description": "{count} serrure(s) Nuki détectée(s) sur MQTT. L'API MQTT locale doit être activée dans l'appli Nuki.",
+        "data": { "nuki_id": "Serrure" }
+      },
+      "manual": {
+        "title": "Serrure Nuki",
+        "description": "L'identifiant (Nuki ID, hexadécimal) figure dans l'appli Nuki et dans les sujets MQTT nuki/<ID>/…",
+        "data": { "nuki_id": "Nuki ID", "lock_name": "Nom (facultatif)", "topic_prefix": "Préfixe MQTT" }
+      }
+    },
+    "error": { "invalid_id": "Identifiant invalide (lettres et chiffres uniquement)." },
+    "abort": {
+      "already_configured": "Cette serrure est déjà configurée.",
+      "mqtt_not_ready": "L'intégration MQTT n'est pas configurée ou pas connectée."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Personnes",
+        "description": "Une ligne par personne : `Auth-ID = Nom` (appli, porte-clés…) ou `code:Code-ID = Nom` (clavier). L'Auth-ID inconnu s'affiche dans le capteur « Dernière personne » après une ouverture. {error}",
+        "data": { "people": "Personnes" }
+      }
+    },
+    "error": { "invalid_people": "Format incorrect." }
+  },
+  "entity": {
+    "sensor": {
+      "last_person": { "name": "Dernière personne" },
+      "last_action": { "name": "Dernière action" }
+    },
+    "event": {
+      "lock_action": {
+        "name": "Action",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "none": "Aucune action", "unlock": "Déverrouillage", "lock": "Verrouillage", "unlatch": "Ouverture",
+              "lock_n_go": "Lock'n'go", "lock_n_go_unlatch": "Lock'n'go avec ouverture",
+              "full_lock": "Verrouillage complet", "other": "Autre"
+            }
+          }
+        }
+      }
+    }
+  }
+}
